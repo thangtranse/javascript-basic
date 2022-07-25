@@ -125,7 +125,9 @@ const main = async () => {
 
 main();
 ```
+
 Result:
+
 ```sh
 hi
 my name
@@ -134,7 +136,48 @@ jeff!
 and I love 2 code
 ```
 
+## What is result with example of below?
 
+```javascript
+const funcA = async () => {
+  return "Hello";
+};
+const funcB = () => {
+  return "Hello";
+};
+
+funcA();
+funcB();
+```
+Result
+```sh
+// funcA()
+Promise<{}>
+// funcB()
+"Hello"
+```
+
+# Callbacks
+
+```javascript
+const functionWithACallback = (callback) => {
+  console.log("You called this function!");
+  setTimeout(() => {
+    callback("I am done");
+  }, 1000);
+};
+const myFunction = () => {
+  const myCallback = console.log;
+  functionWithACallback(myCallback);
+};
+myFunction();
+```
+Result
+```text
+You called this function
+I am done
+```
 
 # Ref:
+
 - https://betterprogramming.pub/learn-how-to-use-async-await-like-a-pro-481a5b829bf0
