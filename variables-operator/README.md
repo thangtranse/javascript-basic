@@ -1,6 +1,6 @@
 # Variables and Operator
 
-## Variables `var`, `let`, `const`
+## Variables (`var`, `let`, `const`)
 
 `var` có thuộc tính cục bộ `(scope global)` khi khai báo trong `block` và sử dụng ngoài `block` đó. Tuy nhiên, nếu khai báo trong 1 `function` thì sẽ có `scope function` hoặc `scope local` nên truy cập bên ngoài sẽ báo lỗi.
 
@@ -129,6 +129,35 @@ obj.name = "bar";
 console.log(obj.name);
 ```
 
+# Operator
+
+## Arithmetic Operators (`+`,`-`, `*`, `/`, `**`, `++`, `--`, `%`)
+
+## Assignment Operators (`=`,`+=`, `-=`, `*=`, `/=`, `%=`, `**=`)
+
+## JavaScript String Operators
+
+## Adding Strings and Numbers
+
+## JavaScript Comparison Operators
+
+## JavaScript Logical Operators
+
+| Operator | Description | Example                       |
+| -------- | ----------- | ----------------------------- |
+| &&       | and         | (x < 10 && y > 1) is true     |
+| \|\|     | or          | (x == 5 \|\| y == 5) is false |
+| !        | not         | !(x == y) is true             |
+
+```js
+let a;
+a || ""; // ""
+let b = 5;
+a || ""; // 5
+```
+
+## JavaScript Type Operators
+
 # SUMARY
 
 ![SUMARY](./cb582798-fddf-4af3-ae7e-ded31585327e.png "SUMARY")
@@ -136,3 +165,4 @@ console.log(obj.name);
 # REF
 
 1. https://suntech.edu.vn/phan-biet-let-const-va-var-trong-javascript.sunpost.html
+1. https://www.w3schools.com/js/js_operators.asp
