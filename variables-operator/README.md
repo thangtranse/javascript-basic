@@ -1,3 +1,82 @@
+# Contents of
+
+# Data Types And Data Structures
+
+## Primitive values (`boolean`, `null`, `undefined`, `number`, `string`)
+
+```js
+let foo = 42; // foo is now a number
+foo = "bar"; // foo is now a string
+foo = true; // foo is now a boolean
+```
+
+How to know Null and Undefined?
+
+```js
+let valueUndefined; // undefind
+let valueNull = null; // null
+
+typeof valueUndefined; // undefind
+typeof valueNull; // object
+
+null == undefined; // true
+null === undefined; // false
+```
+
+How to check for an undefined or null variable in JavaScript?
+
+```js
+if (some_variable == null) {
+  // some_variable is either null or undefined
+}
+```
+
+So these two lines are equivalent:
+
+```js
+if (typeof some_variable !== "undefined" && some_variable !== null) {
+}
+if (some_variable != null) {
+}
+```
+
+NOTE:
+
+```js
+// Check Argument
+function(foo){
+    if( foo == null ) {
+      // null or undefined
+    }
+}
+
+// Check value in Object
+const my_obj = {value: "Hello"}
+if(my_obj.foo == null) {
+// null or undefined
+}
+
+if ( !some_variable ) {
+  // some_variable is either null, undefined, 0, NaN, false, or an empty string
+}
+if ( some_variable ) {
+  // we don't get here if some_variable is null, undefined, 0, NaN, false, or ""
+}
+```
+
+Which allows a more concise way to assign a default value if a variable is null or undefined, for example:
+
+```js
+if (a.speed == null) {
+  // Set default if null or undefined
+  a.speed = 42;
+}
+// can be written as any of these forms
+a.speed ??= 42;
+a.speed ?? a.speed = 42;
+a.speed = a.speed ?? 42;
+```
+
 # Variables and Operator
 
 ## Variables (`var`, `let`, `const`)
@@ -166,3 +245,4 @@ a || ""; // 5
 
 1. https://suntech.edu.vn/phan-biet-let-const-va-var-trong-javascript.sunpost.html
 1. https://www.w3schools.com/js/js_operators.asp
+1. https://stackoverflow.com/questions/2559318/how-to-check-for-an-undefined-or-null-variable-in-javascript
