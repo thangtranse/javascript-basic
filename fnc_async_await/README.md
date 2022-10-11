@@ -1,3 +1,33 @@
+# Function
+
+### JavaScript Function Syntax
+
+```js
+function name(parameter1, parameter2, parameter3) {
+  // code to be executed
+  console.log(arguments[0]);
+  // expected output: 1
+
+  console.log(arguments[1]);
+  // expected output: 2
+
+  console.log(arguments[2]);
+  // expected output: 3
+}
+
+name(1, 2, 3);
+```
+
+### Function Return
+
+```js
+let x = myFunction(4, 3); // Function is called, return value will end up in x
+
+function myFunction(a, b) {
+  return a * b; // Function returns the product of a and b
+}
+```
+
 # Promises
 
 ```javascript
@@ -12,13 +42,15 @@ const async_func = () => {
 console.log("hi");
 console.log("my name");
 
+async_func();
+
 async_func()
   .then((res) => {
     console.log(res);
     console.log("jeff!");
   })
-  .catch((error) => {
-    console.error(error);
+  .catch((err) => {
+    console.log(err);
   });
 ```
 
@@ -100,7 +132,7 @@ Now, say that we wanted to add another piece of asynchronous code to the example
 const async_func = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve("is");
+      reject("is");
     }, 530);
   });
 };
@@ -108,7 +140,7 @@ const async_func = () => {
 const async_func2 = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve("and I love 2 code");
+      reject("and I love 2 code");
     }, 500);
   });
 };
@@ -116,11 +148,15 @@ const async_func2 = () => {
 const main = async () => {
   console.log("hi");
   console.log("my name");
-  const result = await async_func();
-  console.log(result);
-  console.log("jeff!");
-  const result2 = await async_func2();
-  console.log(result2);
+  try {
+    const result = await async_func();
+    console.log(result);
+    console.log("jeff!");
+    const result2 = await async_func2();
+    console.log(result2);
+  } catch (error) {
+    console.log("error", error);
+  }
 };
 
 main();
@@ -149,7 +185,9 @@ const funcB = () => {
 funcA();
 funcB();
 ```
+
 Result
+
 ```sh
 // funcA()
 Promise<{}>
@@ -172,7 +210,9 @@ const myFunction = () => {
 };
 myFunction();
 ```
+
 Result
+
 ```text
 You called this function
 I am done
@@ -180,4 +220,5 @@ I am done
 
 # Ref:
 
-- https://betterprogramming.pub/learn-how-to-use-async-await-like-a-pro-481a5b829bf0
+1. https://betterprogramming.pub/learn-how-to-use-async-await-like-a-pro-481a5b829bf0
+1. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments?retiredLocale=vi

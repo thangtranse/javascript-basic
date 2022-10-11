@@ -2,7 +2,7 @@ console.log("----synchronous----");
 console.log("hi");
 console.log("my name");
 console.log("is");
-console.log("jeff!");
+console.log("Thang!");
 
 console.log("----synchronous?----");
 console.log("hi");
@@ -12,7 +12,7 @@ setTimeout(() => {
   console.log("is");
 }, 500);
 
-console.log("jeff!");
+console.log("Thang!");
 
 // FUNCTION
 
@@ -71,23 +71,44 @@ const sum = (arg1, arg2) => {
 };
 
 const rsl = sum(1, 3);
-console.log(rsl)
+console.log(rsl);
 
 // -------------
 
-function fncDemoCallBack(callback){
-  return callback("Xin chào")
+function fncDemoCallBack(callback) {
+  return callback("Xin chào");
 }
-fncDemoCallBack(console.log)
+fncDemoCallBack(console.log);
 
 // -------------
 
-function fncDemo2CallBack(callback){
-  return callback(2, 3)
+function fncDemo2CallBack(callback) {
+  return callback(2, 3);
 }
 
-fncDemo2CallBack((a, b) => a - b)
+fncDemo2CallBack((a, b) => a - b);
 
+function test() {
+  console.log("Hi");
+}
 
-- Giải bài toán n^n (vd: 2^5) bằng javascript
-- Xem lại bài toán Fibonacci
+function test_1() {
+  return new Promise((reject, reslove) => {
+    setTimeout(() => {
+      reslove(console.log("my name"));
+    }, 1000);
+  });
+}
+// test_1()
+
+function test_2() {
+  console.log("Thang");
+}
+
+function runSBS() {
+  test();
+  test_1().then((data) => {
+    test_2();
+  });
+}
+runSBS();
